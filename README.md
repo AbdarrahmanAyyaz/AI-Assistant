@@ -1,26 +1,123 @@
-<h1 align="center">Hi 👋, I'm Abdarrahman</h1>
-<h3 align="center">A passionate Software Developer from San Francisco</h3>
+# AI Assist
 
-- 🔭 I’m currently working on **AI Customer Chatbot**
+> `Context Aware` AI coding assistant inside terminal to help in code development, code explanation, code refactor and review, bug fix and chat with supporting local and online language models
 
-- 🌱 I’m currently learning **Generative AI, RAG, LLM, and Cloud Technologies**
+`AIAssist` is compatible with bellow AI Services: 
+- [x] [OpenAI](https://platform.openai.com/docs/api-reference/introduction) through apis
+- [x] [Azure AI Services](https://azure.microsoft.com/en-us/products/ai-services) through apis
+- [x] [Ollama](https://ollama.com/) with using [ollama models](https://ollama.com/search) locally
+- [ ] [Anthropic](https://docs.anthropic.com/en/api/getting-started) through apis
+- [ ] [OpenRouter](https://openrouter.ai/docs/quick-start) through apis
 
-- 👯 I’m looking to collaborate on **AI/ML Projects**
+> [!TIP]
+> You can use ollama and its models that are more compatible with code like [deepseek-v2.5](https://ollama.com/library/deepseek-v2.5) or [qwen2.5-coder](https://ollama.com/library/qwen2.5-coder) locally. To use local models, you will need to run [Ollama](https://github.com/ollama/ollama) process first. For running ollama you can use [ollama docker](https://ollama.com/blog/ollama-is-now-available-as-an-official-docker-image) container.
 
-- 🤝 I’m looking for help with **Maintaining the accuracy and relevance of retrieved information in a given LLM.**
+> [!NOTE]
+> Development of `vscode` and `jetbrains` plugins are in the plan and I will add them soon.
 
-- 👨‍💻 All of my projects are available at [abdarrahman.dev](abdarrahman.dev)
+## Features
 
-- 📫 How to reach me **abdarrahmanayyaz00@gmail.com**
+-   ✅ `Context Aware` ai code assistant through [ai embeddings](src/AIAssistant/Services/CodeAssistStrategies/EmbeddingCodeAssist.cs) which is based on Retrieval Augmented Generation (RAG) or [tree-sitter application summarization](src/AIAssistant/Services/CodeAssistStrategies/TreeSitterCodeAssistSummary.cs) to summarize application context and understanding by AI.
+-   ✅ Support different result formats, like [Unified Diff Format](src/AIAssistant/Diff/UnifiedCodeDiffParser.cs), [Code Block Format](src/AIAssistant/Diff/CodeBlockDiffParser.cs) and [Search-Replace Format](src/AIAssistant/Diff/SearchReplaceParser.cs).
+-   ✅ Code assistant for developing new features, finding bugs, refactor and review existing code base.
+-   ✅ Chat mode for chatting with different local and online AI models through terminal.
+-   ✅ Support local [ollama models](https://ollama.com/library) and [OpenAI](https://platform.openai.com/docs/models) and [Azure AI Service](https://ai.azure.com/explore/models) models.
+-   ✅ Support multiple code languages like C#, Java, go,...
+-   ✅ Syntax highlighting for showing code blocks and using `md format` for ai results with capability of `changing theme` like dracula theme or vscode light theme.
+-   ✅ Defining a dedicated ignore file for AIAssist through a `.aiassistignore` for excluding files and folders that you want to exclude from code assist process and decreasing final token size.
+-   ✅ Customize `configuration` through creating `aiassist-config.json` running directory for `aiassist` and a format like [predefined aiassist-config.json](./src/AIAssistant/aiassist-config.json).
+-   ✅ Showing token usage count and calculated priced based on each model `input token` and `output token` price.
+-   ✅ Customize models information with creating a customized models information through `ModelsInformationOptions` section in the `aiassist-config.json` and a format like [predefined models information](./src/Clients/LLMs/models_information_list.json).
+-   ✅ Customize models options through `ModelsOptions` section in the `aiassist-config.json` and a format like [predefined models options](./src/Clients/LLMs/models_options.json).
+-   ✅ Terminal main commands like `aiassist code`, `aiassist chat`, `aiassist explain` and support some internal commands like `:clear`, `:add-file`, `:clear-history`, `:token`, ...
 
-- ⚡ Fun fact **I love traveling and spending time with nature!**
+## Get Started
 
-<h3 align="left">Connect with me:</h3>
-<p align="left">
-<a href="https://linkedin.com/in/abdarrahman-ayyaz" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="abdarrahman-ayyaz" height="30" width="40" /></a>
-</p>
+AIAssist uses [Azure AI Services](https://azure.microsoft.com/en-us/products/ai-services) or [OpenAI](https://platform.openai.com/docs/api-reference/introduction) apis by default. For using `OpenAI` or `Azure AI` apis we need to have a `ApiKey`.
 
-<h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://www.arduino.cc/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/arduino-1.svg" alt="arduino" width="40" height="40"/> </a> <a href="https://aws.amazon.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="aws" width="40" height="40"/> </a> <a href="https://babeljs.io/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/babeljs/babeljs-icon.svg" alt="babel" width="40" height="40"/> </a> <a href="https://getbootstrap.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="40" height="40"/> </a> <a href="https://www.w3schools.com/cpp/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="cplusplus" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://d3js.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/d3js/d3js-original.svg" alt="d3js" width="40" height="40"/> </a> <a href="https://expressjs.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40"/> </a> <a href="https://www.figma.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="40" height="40"/> </a> <a href="https://firebase.google.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="40" height="40"/> </a> <a href="https://cloud.google.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg" alt="gcp" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://www.java.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://jestjs.io" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/jestjsio/jestjsio-icon.svg" alt="jest" width="40" height="40"/> </a> <a href="https://www.linux.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/> </a> <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://nextjs.org/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/nextjs-2.svg" alt="nextjs" width="40" height="40"/> </a> <a href="https://www.oracle.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/oracle/oracle-original.svg" alt="oracle" width="40" height="40"/> </a> <a href="https://pandas.pydata.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/pandas/pandas-original.svg" alt="pandas" width="40" height="40"/> </a> <a href="https://postman.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> <a href="https://pytorch.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg" alt="pytorch" width="40" height="40"/> </a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a> <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwind" width="40" height="40"/> </a> <a href="https://www.tensorflow.org" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" alt="tensorflow" width="40" height="40"/> </a> <a href="https://webpack.js.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/d00d0969292a6569d45b06d3f350f463a0107b0d/icons/webpack/webpack-original-wordmark.svg" alt="webpack" width="40" height="40"/> </a> </p>
+- To access `dotnet tool`, we need to install [latest .net sdk](https://dotnet.microsoft.com/en-us/download) first.
+- Install `aiassist` with `dotnet tool install` and bellow command:
 
-<p><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=abdarrahmanayyaz&show_icons=true&locale=en&layout=compact" alt="abdarrahmanayyaz" /></p>
+```bash
+dotnet tool install --global AIAssist 
+```
+
+- For OpenAI If you don't have a API key you can [sign up](https://platform.openai.com/signup) in OpenAI and get a ApiKey.
+- For Azure AI service you can [signup](https://azure.microsoft.com/en-us/products/ai-services) a azure account and get a AI model API key.
+- After getting Api key we should set API key for chat and embedding models through environment variable or command options.
+- Now got to `project directory` with `cd` command in terminal, For running `aiassist` and setting api key.
+
+```bash
+# Go to project directory
+cd /to/project/directory
+```
+
+-   Set `Api Key` through `environment variable`:
+
+Linux terminal:
+```bash
+export CHAT_MODEL_API_KEY=your-chat-api-key-here
+export EMBEDDINGS_MODEL_API_KEY=your-embedding-api-key-here
+```
+
+Windows Powershell Terminal:
+```powershell
+$env:CHAT_MODEL_API_KEY=your-chat-api-key-here
+$env:EMBEDDINGS_MODEL_API_KEY=your-embedding-api-key-here
+```
+
+-   Or set `Api Key` through `command option`:
+
+```bash
+aiassist code --chat-api-key your-chat-api-key-here  --embeddings-api-key your-embedding-api-key-here
+```
+
+-   If you are using AI models that need `ApiVersion`, `DeploymentId` and `BaseAddress` like Azure AI Service models, you can set them by environment variable or command options.
+-   Set `ApiVersion`, `DeploymentId` and `BaseAddress` through`environment variable`:
+
+Linux terminal:
+```bash
+export CHAT_BASE_ADDRESS=your-chat-base-address-here
+export CHAT_API_VERSION=your-chat-api-version-here
+export CHAT_DEPLOYMENT_ID=your-chat-deployment-id-here
+export EMBEDDINGS_BASE_ADDRESS=your-embedding-base-address-here
+export EMBEDDINGS_API_VERSION=your-embedding-api-version-here
+export EMBEDDINGS_DEPLOYMENT_ID=your-embedding-deployment-id-here
+```
+
+Windows Powershell Terminal:
+```powershell
+$env:CHAT_BASE_ADDRESS=your-chat-base-address-here
+$env:CHAT_API_VERSION=your-chat-api-version-here
+$env:CHAT_DEPLOYMENT_ID=your-chat-deployment-id-here
+$env:EMBEDDINGS_BASE_ADDRESS=your-embedding-base-address-here
+$env:EMBEDDINGS_API_VERSION=your-embedding-api-version-here
+$env:EMBEDDINGS_DEPLOYMENT_ID=your-embedding-deployment-id-here
+```
+
+-   Or set `ApiVersion`, `DeploymentId` and `BaseAddress` through `command option`:
+
+```bash
+aiassist code --chat-base-address your-chat-base-address-here --chat-api-version your-chat-api-version-here  --chat-deployment-id your-chat-deployment-id-here  --embeddings-base-address your-embeddings-base-address-here  --embeddings-api-version your-embeddings-api-version-here  --embeddings-deployment-id your-embeddings-deployment-id-here
+```
+
+-   Now run the ai assistant with `aiassist` command.
+
+```bash
+# run aiassist in code assistant mode.
+aiassist code
+```
+
+## ⭐ Support
+
+If you like feel free to ⭐ this repository, It helps out :)
+
+Thanks a bunch for supporting me!
+
+## Contribution
+
+The application is in development status. You are feel free to submit a pull request or create an issue for any bugs or suggestions.
+
+## License
+
+The project is under [Apache-2.0 license](./LICENSE).
