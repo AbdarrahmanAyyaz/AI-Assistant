@@ -1,0 +1,22 @@
+{
+  "AppOptions": {
+    "ThemeName": "dracula",
+    "PrintCostEnabled": true
+  },
+  "LLMOptions": {
+    "ChatModel": "azure/gpt-4o",
+    "EmbeddingsModel": "azure/text-embedding-3-large",
+    "CodeDiffType": "CodeBlockDiff",
+    "CodeAssistType": "Embedding",
+    "Temperature": 0.2
+  },
+  "Serilog": {
+    "MinimumLevel": {
+      "Default": "Warning",
+      "Override": {
+        "Microsoft": "Warning",
+        "System": "Warning"
+      }
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "$schema": "./spectre_console_schema.json",
+  "name": "dracula",
+  "foreground": "#f8f8f2",
+  "console": {
+    "prompt": {
+      "foreground": "#bd93f9"  
+    },
+    "text": {
+      "foreground": "#f8f8f2"  
+    },
+    "information": {
+      "foreground": "#bd93f9"  
+    },
+    "success": {
+      "foreground": "#50fa7b"
+    },
+    "confirmation": {
+      "foreground": "#8be9fd" 
+    },
+    "summary": {
+      "foreground": "#8be9fd"
+    },
+    "highlight": {
+      "foreground": "#ff79c6"
+    },
+    "error": {
+      "foreground": "#ff5555"
+    },
+    "warning": {
+      "foreground": "#f1fa8c"
+    },
+    "cursor": {
+      "foreground": "#ff79c6"
+    },
+    "tree": {
+      "foreground": "#8be9fd",
+      "bold": true
+    }
+  },
+  "code": {
+    "background": "#44475A",
+    "foreground": "#ff79c6",
+    "bold": true
+  },
+  "block_quote": {
+    "foreground": "#f1fa8c",
+    "prefix_foreground": "#bd93f9",
+    "italic": true
+  },
+  "list": {
+    "foreground": "#f8f8f2",
+    "prefix_foreground": "#bd93f9",
+    "block_prefix": "■",
+    "margin": 2
+  },
+  "head": {
+    "foreground": "#bd93f9",
+    "bold": true,
+    "margin": 2
+  },
+  "paragraph": {
+    "foreground": "#f8f8f2",
+    "margin": 2
+  },
+  "emph": {
+    "foreground": "#f1fa8c"
+  },
+  "task": {
+    "ticked": "[✓] ",
+    "unticked": "[ ] ",
+    "prefix_foreground": "#f8f8f2",
+    "foreground": "#f8f8f2"
+  },
+  "link": {
+    "underline": true,
+    "link_foreground": "#8be9fd",
+    "link_text_foreground": "#ff79c6"
+  },
+  "code_block": {
+    "theme_name": "dracula",
+    "margin": 2
+  }
+}

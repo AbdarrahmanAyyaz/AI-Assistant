@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+
+    
+    <ItemGroup>
+      <None Remove="Queries\Defaults\csharp.scm" />
+      <EmbeddedResource Include="Queries\Default\csharp.scm" />
+      <None Remove="Queries\Defaults\go.scm" />
+      <EmbeddedResource Include="Queries\Default\go.scm" />
+      <None Remove="Queries\Defaults\java.scm" />
+      <EmbeddedResource Include="Queries\Default\java.scm" />
+      <None Remove="Queries\Defaults\javascript.scm" />
+      <EmbeddedResource Include="Queries\Default\javascript.scm" />
+      <None Remove="Queries\Defaults\python.scm" />
+      <EmbeddedResource Include="Queries\Default\python.scm" />
+      <None Remove="Queries\Defaults\typescript.scm" />
+      <EmbeddedResource Include="Queries\Default\typescript.scm" />
+      <None Remove="Queries\Simple\csharp.scm" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\BuildingBlocks\BuildingBlocks.csproj" />
+    </ItemGroup>
+    
+</Project>

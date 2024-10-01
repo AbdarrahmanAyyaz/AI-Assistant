@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <ItemGroup>
+        <PackageReference Include="AngleSharp"/>
+        <PackageReference Include="ColorCode.HTML"/>
+        <PackageReference Include="Humanizer.Core"/>
+        <PackageReference Include="Markdig"/>
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp"/>
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection"/>
+        <PackageReference Include="Microsoft.Extensions.FileSystemGlobbing"/>
+        <PackageReference Include="Microsoft.Extensions.Hosting"/>
+        <PackageReference Include="Microsoft.Extensions.Http"/>
+        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
+        <PackageReference Include="Serilog"/>
+        <PackageReference Include="Serilog.AspNetCore"/>
+        <PackageReference Include="Serilog.Extensions.Hosting"/>
+        <PackageReference Include="Serilog.Sinks.Console"/>
+        <PackageReference Include="Spectre.Console"/>
+        <PackageReference Include="Spectre.Console.Cli"/>
+        <PackageReference Include="Microsoft.ML.Tokenizers"/>
+        <PackageReference Include="System.CommandLine"/>
+        <PackageReference Include="System.CommandLine.NamingConventionBinder"/>
+        <PackageReference Include="System.Linq.Async"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Remove="SpectreConsole\Themes\vscode_light.json"/>
+        <None Remove="SpectreConsole\Themes\dracula.json"/>
+        <None Remove="SpectreConsole\Themes\vscode_dark.json"/>
+        <None Remove="SpectreConsole\Themes\atom_one_light.json"/>
+        <None Remove="SpectreConsole\Themes\atom_one_dark.json"/>
+        <None Remove="MarkdigMarkdown\Themes\dracula.json"/>
+        <None Remove="MarkdigMarkdown\Themes\atom_one_dark.json"/>
+        <None Remove="MarkdigMarkdown\Themes\atom_one_light.json"/>
+        <None Remove="MarkdigMarkdown\Themes\vscode_dark.json"/>
+        <None Remove="MarkdigMarkdown\Themes\vscode_light.json"/>
+        <None Remove="..\..\.gitignore"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="SpectreConsole\Themes\atom_one_dark.json"/>
+        <EmbeddedResource Include="SpectreConsole\Themes\atom_one_light.json"/>
+        <EmbeddedResource Include="SpectreConsole\Themes\vscode_dark.json"/>
+        <EmbeddedResource Include="SpectreConsole\Themes\dracula.json"/>
+        <EmbeddedResource Include="SpectreConsole\Themes\vscode_light.json"/>
+        <EmbeddedResource Include="MarkdigMarkdown\Themes\dracula.json"/>
+        <EmbeddedResource Include="MarkdigMarkdown\Themes\atom_one_dark.json"/>
+        <EmbeddedResource Include="MarkdigMarkdown\Themes\atom_one_light.json"/>
+        <EmbeddedResource Include="MarkdigMarkdown\Themes\vscode_dark.json"/>
+        <EmbeddedResource Include="MarkdigMarkdown\Themes\vscode_light.json"/>
+    </ItemGroup>
+
+</Project>
+
+

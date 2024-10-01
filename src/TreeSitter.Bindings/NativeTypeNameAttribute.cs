@@ -1,0 +1,31 @@
+using System;
+using System.Diagnostics;
+
+namespace TreeSitter.Bindings;
+
+/// <summary>Defines the type of a member as it was used in the native signature.</summary>
+[AttributeUsage(
+    AttributeTargets.Struct
+        | AttributeTargets.Enum
+        | AttributeTargets.Property
+        | AttributeTargets.Field
+        | AttributeTargets.Parameter
+        | AttributeTargets.ReturnValue,
+    AllowMultiple = false,
+    Inherited = true
+)]
+[Conditional("DEBUG")]
+internal sealed partial class NativeTypeNameAttribute : Attribute
+{
+    private readonly string _name;
+
+    /// <summary>Initializes a new instance of the <see cref="NativeTypeNameAttribute" /> class.</summary>
+    /// <param Name="name">The Name of the type that was used in the native signature.</param>
+    public NativeTypeNameAttribute(string name)
+    {
+        _name = name;
+    }
+
+    /// <summary>Gets the Name of the type that was used in the native signature.</summary>
+    public string Name => _name;
+}

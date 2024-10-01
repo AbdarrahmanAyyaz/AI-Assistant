@@ -1,0 +1,65 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <PackageReference Include="coverlet.collector"/>
+    <PackageReference Include="FluentAssertions" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk"/>
+    <PackageReference Include="NSubstitute"/>
+    <PackageReference Include="xunit"/>
+    <PackageReference Include="xunit.runner.visualstudio"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\AIAssistant\AIAssistant.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="TestData\Calculator\Calculator.csproj" />
+    <Content Include="TestData\Calculator\Calculator.csproj">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Compile Remove="TestData\Calculator\Models\Add.cs" />
+    <Content Include="TestData\Calculator\Models\Add.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Compile Remove="TestData\Calculator\Models\Divide.cs" />
+    <Content Include="TestData\Calculator\Models\Divide.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Compile Remove="TestData\Calculator\Models\Multiply.cs" />
+    <Content Include="TestData\Calculator\Models\Multiply.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Compile Remove="TestData\Calculator\Models\Subtract.cs" />
+    <Content Include="TestData\Calculator\Models\Subtract.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Compile Remove="TestData\Calculator\IOperation.cs" />
+    <Content Include="TestData\Calculator\IOperation.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Compile Remove="TestData\Calculator\Program.cs" />
+    <Content Include="TestData\Calculator\Program.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Compile Remove="TestData\SimpleCalculator\Program.cs" />
+    <Content Include="TestData\SimpleCalculator\Program.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Remove="xunit.runner.json" />
+    <Content Include="xunit.runner.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  
+</Project>
