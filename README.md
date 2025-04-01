@@ -112,7 +112,6 @@ aiassist code
 
 If you like feel free to ⭐ this repository, It helps out :)
 
-Thanks a bunch for supporting me!
 
 ## Contribution
 
